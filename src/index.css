@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --color-primary-bg: #080D1C;
+  --color-secondary-bg: #111827;
+  --color-electric-blue: #2563EB;
+  --color-cyan-glow: #22D3EE;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080D1C;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #2563EB;
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080D1C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes holographicScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+@keyframes liveBreathing {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.3));
+  }
+  50% {
+    transform: scale(1.015);
+    filter: drop-shadow(0 0 30px rgba(34, 211, 238, 0.55)) drop-shadow(0 0 45px rgba(37, 99, 235, 0.35));
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 7s linear infinite;
+}
+
+.animate-scan {
+  animation: holographicScan 3.6s ease-in-out infinite;
+}
+
+.animate-live-breathing {
+  animation: liveBreathing 4.5s ease-in-out infinite;
+}
+
